@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/svg" href="./images/parking-automobile-svgrepo-com.svg">
+    <title>Meta Parking</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <nav>
+        <div>
+            <img src="./metacube logo.svg" alt="Metacube Parking Logo">
+            <div id="nav-tab">
+                <a href="#employee-section"><img src="./images/person-plus-svgrepo-com.svg" alt=""> <span>Add Employee</span></a>
+
+                <a href="">Add Vehicle</a>
+                <a href="">Give Feedback</a>
+                <a href="">Pricing</a>
+            </div>
+        </div>
+    </nav>
+    <section id="hero">
+        <div class="hero-text">
+            <h1>Meta <span>Parking</span></h1>
+            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Officia autem ipsum et mollitia impedit odio est neque unde quod dolorum inventore ab nam error, quae aut ullam delectus doloribus nobis, eaque corporis. Animi, tempora autem.</p>
+        </div>
+        <img src="./images/cars-5512851_1280.jpg" alt="Metacube Parking system Hero Image">
+    </section>
+
+    <section id="employee-section">
+        <img src="./images/employee-reg.png" alt="employee image">
+        <div class="form-section">
+            <h2>Add Employee</h2>
+            <form action="" class="employee-form">
+                <div class="input-div">
+                    <label for="">Full Name</label>
+                    <input type="text" required>
+                </div>
+                <div>
+                    <label for="">Gender</label>
+                    <div>
+                        <input type="radio" name="gender" required>
+                        <label for="">Male</label>
+                    </div>
+                    <div>
+                        <input type="radio" name="gender" required>
+                        <label for="">Female</label>
+                    </div>
+                </div>
+                <div class="input-div">
+                    <label for="">E-mail</label>
+                    <input type="email" required>
+                </div>
+                <div class="input-div">
+                    <label for="">Password</label>
+                    <input type="password" required pattern=".{8,}" title="8 or more characters">
+                </div>
+                <div class="input-div">
+                    <label for="">Confirm Password</label>
+                    <input type="password" required pattern=".{8,}" title="8 or more characters">
+                </div>
+                <div class="input-div">
+                    <label for="">Contact Number</label>
+                    <input type="number" required pattern="[0-9].{1,10}">
+                </div>
+                <input type="submit" value="Add Employee" id="submission-btn">
+                <button id="submission-btn">Add Employee</button>
+        </div>
+            
+        </form>
+    </section>
+
+    <section>
+        <h2>Add Vehicle</h2>
+        <form action="">
+            <div>
+                <label for="">Vehicle make (Company)</label>
+                <input type="text">
+            </div>
+            <div>
+                <label for="">Vehicle Model</label>
+                <input type="text">
+            </div>
+            <div>
+                <label for="">Vehicle type</label>
+                <select name="vehicle-type" id="">
+                    <option value="Car">Car</option>
+                    <option value="Bike">Bike</option>
+                    <option value="Cycle">Cycle</option>
+                    <option value="Truck">Truck</option>
+                </select>
+            </div>
+            <div>
+                <label for="">Vehicle Number</label>
+                <input type="text">
+            </div>
+            <div>
+                <label for="">Employee Id</label>
+                <input type="text">
+            </div>
+            <div>
+                <label for="">Identification</label>
+                <input type="text">
+            </div>
+        </form>
+    </section>
+
+    <section>
+        <div>
+            <h2>Feedback</h2>
+            <img src="" alt="Feedback Image">
+        </div>
+        <form action="">
+            <div>
+                <label for="">Full Name</label>
+                <input type="text">
+            </div>
+            <div>
+                <label for="">E-mail</label>
+                <input type="email">
+            </div>
+            <div>
+                <label for="">Subject</label>
+                <input type="text">
+            </div>
+            <div>
+                <label for="">Message</label>
+                <textarea name="" id=""></textarea>
+            </div>
+        </form>
+    </section>
+
+    <section>
+        <h2>Pricing</h2>
+        <div>
+            <div>
+                <span>Cycle</span>
+                <div>
+                    <span>₹50</span>
+                    <span>/month</span>
+                </div>
+                <span>₹5 Daily</span>
+                <span>₹50 Monthly</span>
+                <span>₹500 Yearly</span>
+                <button>PURCHASE NOW</button>
+            </div>
+            <div>
+                <span>Bike</span>
+                <div>
+                    <span>₹100</span>
+                    <span>/month</span>
+                </div>
+                <span>₹10 Daily</span>
+                <span>₹100 Monthly</span>
+                <span>₹800 Yearly</span>
+                <button>PURCHASE NOW</button>
+            </div>
+            <div>
+                <span>Car</span>
+                <div>
+                    <span>₹200</span>
+                    <span>/month</span>
+                </div>
+                <span>₹15 Daily</span>
+                <span>₹200 Monthly</span>
+                <span>₹1200 Yearly</span>
+                <button>PURCHASE NOW</button>
+            </div>
+            <div>
+                <span>Truck</span>
+                <div>
+                    <span>₹400</span>
+                    <span>/month</span>
+                </div>
+                <span>₹20 Daily</span>
+                <span>₹400 Monthly</span>
+                <span>₹2500 Yearly</span>
+                <button>PURCHASE NOW</button>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div>Made with  💗 by Andrewbie</div>
+    </footer>
+</body>
+</html>
