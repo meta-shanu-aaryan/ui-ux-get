@@ -13,11 +13,11 @@
         <div>
             <img src="./images/metacube logo.svg" alt="Metacube Parking Logo">
             <div id="nav-tab">
-                <a href="#employee-section"><img src="./images/person-plus-svgrepo-com.svg" alt=""> <span>Add Employee</span></a>
+                <a href="#employee-section"><span>Add Employee</span></a>
 
-                <a href="">Add Vehicle</a>
-                <a href="">Give Feedback</a>
-                <a href="">Pricing</a>
+                <a href="#add-vehicle-collapsed">Add Vehicle</a>
+                <a href="#feedback-section">Give Feedback</a>
+                <a href="#pricing-section">Pricing</a>
             </div>
         </div>
     </nav>
@@ -30,7 +30,7 @@
     </section>
 
     <section id="employee-section">
-        <div id="employee-collapse">
+        <div id="employee-collapse" class="collapse">
             <span>Employee Details</span>
             <img src="./images/sidebar-right.svg" alt="">
         </div>
@@ -70,7 +70,7 @@
                         <label for="">Contact Number</label>
                         <input type="number" required pattern="[0-9].{1,10}">
                     </div>
-                    <input type="submit" value="Add Employee" id="submission-btn">
+                    <input type="submit" value="Add Employee" class="submission-btn">
                     <!-- <button id="submission-btn">Add Employee</button> -->
             </div>
             </form>
@@ -78,70 +78,81 @@
     </section>
 
     <section>
-        <h2>Add Vehicle</h2>
-        <form action="">
-            <div>
-                <label for="">Vehicle make (Company)</label>
-                <input type="text">
+        <div id="add-vehicle-collapsed" class="collapse">
+            <span>Vehicle Details</span>
+            <img src="./images/sidebar-right.svg" alt="">
+        </div>
+        <div id="vehicle-full">
+            <img src="./images/driving school-rafiki.svg" alt="">
+            <div class="form-section">
+                <h2>Add Vehicle</h2>
+                <form action="" class="employee-form">
+                    <div class="input-div">
+                        <label for="">Vehicle make (Company)</label>
+                        <input type="text">
+                    </div>
+                    <div class="input-div">
+                        <label for="">Vehicle Model</label>
+                        <input type="text">
+                    </div>
+                    <div>
+                        <label for="">Vehicle type</label>
+                        <select name="vehicle-type" id="">
+                            <option value="Car">Car</option>
+                            <option value="Bike">Bike</option>
+                            <option value="Cycle">Cycle</option>
+                            <option value="Truck">Truck</option>
+                        </select>
+                    </div>
+                    <div class="input-div">
+                        <label for="">Vehicle Number</label>
+                        <input type="text">
+                    </div>
+                    <div class="input-div">
+                        <label for="">Employee Id</label>
+                        <input type="text">
+                    </div>
+                    <div class="input-div">
+                        <label for="">Identification</label>
+                        <input type="text">
+                    </div>
+                    <input type="submit" value="Add Employee" class="submission-btn">
+                </form>
             </div>
-            <div>
-                <label for="">Vehicle Model</label>
-                <input type="text">
-            </div>
-            <div>
-                <label for="">Vehicle type</label>
-                <select name="vehicle-type" id="">
-                    <option value="Car">Car</option>
-                    <option value="Bike">Bike</option>
-                    <option value="Cycle">Cycle</option>
-                    <option value="Truck">Truck</option>
-                </select>
-            </div>
-            <div>
-                <label for="">Vehicle Number</label>
-                <input type="text">
-            </div>
-            <div>
-                <label for="">Employee Id</label>
-                <input type="text">
-            </div>
-            <div>
-                <label for="">Identification</label>
-                <input type="text">
-            </div>
-        </form>
+        </div>
     </section>
 
-    <section>
+    <section id="feedback-section">
+
         <div>
             <h2>Feedback</h2>
-            <img src="" alt="Feedback Image">
+            <form action="" class="feedback-form">
+                <div class="input-div">
+                    <label for="">Full Name</label>
+                    <input type="text">
+                </div>
+                <div class="input-div">
+                    <label for="">E-mail</label>
+                    <input type="email">
+                </div>
+                <div class="input-div">
+                    <label for="">Subject</label>
+                    <input type="text">
+                </div>
+                <div class="input-textarea">
+                    <label for="">Message</label>
+                    <textarea name="" id=""></textarea>
+                </div>
+            </form>
+            <button id="feedback-btn">Submit now</button>
         </div>
-        <form action="">
-            <div>
-                <label for="">Full Name</label>
-                <input type="text">
-            </div>
-            <div>
-                <label for="">E-mail</label>
-                <input type="email">
-            </div>
-            <div>
-                <label for="">Subject</label>
-                <input type="text">
-            </div>
-            <div>
-                <label for="">Message</label>
-                <textarea name="" id=""></textarea>
-            </div>
-        </form>
     </section>
 
-    <section>
+    <section id="pricing-section">
         <h2>Pricing</h2>
         <div>
-            <div>
-                <span>Cycle</span>
+            <div class="pricing-card">
+                <span class="card-title">Cycle</span>
                 <div>
                     <span>₹50</span>
                     <span>/month</span>
@@ -151,8 +162,8 @@
                 <span>₹500 Yearly</span>
                 <button>PURCHASE NOW</button>
             </div>
-            <div>
-                <span>Bike</span>
+            <div class="pricing-card">
+                <span class="card-title">Bike</span>
                 <div>
                     <span>₹100</span>
                     <span>/month</span>
@@ -162,8 +173,8 @@
                 <span>₹800 Yearly</span>
                 <button>PURCHASE NOW</button>
             </div>
-            <div>
-                <span>Car</span>
+            <div class="pricing-card">
+                <span class="card-title">Car</span>
                 <div>
                     <span>₹200</span>
                     <span>/month</span>
@@ -173,8 +184,8 @@
                 <span>₹1200 Yearly</span>
                 <button>PURCHASE NOW</button>
             </div>
-            <div>
-                <span>Truck</span>
+            <div class="pricing-card">
+                <span class="card-title">Truck</span>
                 <div>
                     <span>₹400</span>
                     <span>/month</span>
