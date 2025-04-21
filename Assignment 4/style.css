@@ -1,0 +1,14 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+body{
+    width: 100%;
+    background: #212529;
+}
+
+.search-icon{
+    width: 25px;
+}
