@@ -29,16 +29,13 @@ body{
     z-index: 7;
 }
 
-.navIcon{
-    background: red;
-    height: 40px;
-    width: 40px;
-    border-radius: 100%;
-}
-
 #navIcontab{
     display: flex;
     gap: 20px;
+}
+
+#navIcontab img{
+    height: 22px;
 }
 
 .navbtncontainer{
@@ -164,13 +161,16 @@ body{
 .feature-list-tab{
     width: 350px;
     display: flex;
-    gap: 10px;
+    gap: 25px;
 }
 
 .feature-icon{
     height: 50px;
     width: 50px;
-    background: #000;
+}
+
+.feature-icon img{
+    width: 50px;
 }
 
 .feature-text{
@@ -530,4 +530,107 @@ body{
 .review-tab>span{
     display: inline-block;
     margin-top: 15px;
+}
+
+#download-section{
+    background: #6388fb;
+    position: relative;
+    height: 50vh;
+}
+
+#download-section>img{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+
+#download-section>#container{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    position: relative;
+    z-index: 1;
+    justify-content: center;
+    gap: 10%;
+}
+
+#container>#text-section{
+    width: 25%;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    height: 100%;
+    padding: 47px 0px;
+}
+
+#container>#text-section>span{
+    font-size: 30px;
+    font-weight: 600;
+
+}
+
+#text-section>p{
+    font-weight: 500;
+    width: 90%;
+}
+
+#container>#img-section{
+    height: 100%;
+    display: flex;
+    align-items: end;
+}
+
+#container>#img-section>img{
+    height: 80%;
+}
+
+footer{
+    height: 25vh;
+    width: 100%;
+    background: #383a53;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+footer>#nav-section{
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+}
+
+footer>#nav-section>#nav-tab{
+    display: flex;
+    gap: 20px;
+}
+
+#nav-tab>a{
+    text-decoration: none;
+    color: #dcdcdc;
+    padding: 2px;
+}
+
+#nav-section>#social{
+    display: flex;
+    gap: 13px;
+}
+
+#nav-section>#social>a{
+    padding: 4px;
+}
+
+#nav-section>#social img{
+    height: 20px;
+}
+
+footer>#bar{
+    width: 80vw;
+    height: 1px;
+    background: #585b84;
+}
+
+footer>div:nth-child(3){
+    color: grey;
 }
