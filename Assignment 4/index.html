@@ -1,45 +1,547 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Bootstrap demo</title>
-    <link rel="stylesheet" href="style.css">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-SgOJa3DmI69IUzQ2PVdRZhwQ+dy64/BUtbMJw1MZ8t5HZApcHrRKUc4W0kG879m7" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-SgOJa3DmI69IUzQ2PVdRZhwQ+dy64/BUtbMJw1MZ8t5HZApcHrRKUc4W0kG879m7"
+      crossorigin="anonymous"
+    />
   </head>
-  <body class="bg-dark ">
-    <nav class="navbar container bg-dark border-body" data-bs-theme="dark">
-        <div class="d-flex justify-content-between w-100 align-items-center border-bottom">
-            <p><a class="link-opacity-100 link-secondary" href="#">Subscribe</a></p>
-            <p class="text-white fs-2 fw-bold">Large</p>
-            <div>
-                <img src="./images/search icon.png" alt="" class="search-icon">
-                <button type="button" class="btn btn-outline-secondary" disabled>Button</button>
-            </div>
+  <body class="bg-dark" data-bs-theme="dark">
+    <nav class="navbar container bg-dark border-body px-3" data-bs-theme="dark">
+      <div
+        class="d-flex justify-content-between w-100 align-items-end border-bottom"
+      >
+        <p><a class="link-opacity-100 link-secondary" href="#">Subscribe</a></p>
+        <p class="text-white fs-2 fw-bold">Large</p>
+        <div class="mb-3 d-flex align-items-center gap-4">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="25"
+            height="25"
+            fill="currentColor"
+            class="bi bi-search"
+            viewBox="0 0 16 16"
+          >
+            <path
+              d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001q.044.06.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0"
+            />
+          </svg>
+          <button type="button" class="btn btn-outline-secondary">
+            Sign Up
+          </button>
         </div>
-        <div class="d-flex justify-content-between w-100 border-bottom align-items-center pt-2">
-            <p><a href="#" class="link-body-emphasis link-offset-2 link-underline-opacity-0 fw-bold">World</a></p>
-            <p><a href="#" class="link-body-emphasis link-offset-2 link-underline-opacity-0">U.S.</a></p>
-            <p><a href="#" class="link-body-emphasis link-offset-2 link-underline-opacity-0">Technology</a></p>
-            <p><a href="#" class="link-body-emphasis link-offset-2 link-underline-opacity-0">Design</a></p>
-            <p><a href="#" class="link-body-emphasis link-offset-2 link-underline-opacity-0">Culture</a></p>
-            <p><a href="#" class="link-body-emphasis link-offset-2 link-underline-opacity-0">Business</a></p>
-            <p><a href="#" class="link-body-emphasis link-offset-2 link-underline-opacity-0">politics</a></p>
-            <p><a href="#" class="link-body-emphasis link-offset-2 link-underline-opacity-0">Opinion</a></p>
-            <p><a href="#" class="link-body-emphasis link-offset-2 link-underline-opacity-0">Science</a></p>
-            <p><a href="#" class="link-body-emphasis link-offset-2 link-underline-opacity-0">Health</a></p>
-            <p><a href="#" class="link-body-emphasis link-offset-2 link-underline-opacity-0">Style</a></p>
-            <p><a href="#" class="link-body-emphasis link-offset-2 link-underline-opacity-0">Travel</a></p>
-        </div>
+      </div>
+      <div
+        class="d-flex justify-content-between w-100 border-bottom align-items-center pt-2"
+      >
+        <p>
+          <a
+            href="#"
+            class="link-body-emphasis link-offset-2 link-underline-opacity-0 fw-bold"
+            >World</a
+          >
+        </p>
+        <p>
+          <a
+            href="#"
+            class="link-body-emphasis link-offset-2 link-underline-opacity-0"
+            >U.S.</a
+          >
+        </p>
+        <p>
+          <a
+            href="#"
+            class="link-body-emphasis link-offset-2 link-underline-opacity-0"
+            >Technology</a
+          >
+        </p>
+        <p>
+          <a
+            href="#"
+            class="link-body-emphasis link-offset-2 link-underline-opacity-0"
+            >Design</a
+          >
+        </p>
+        <p>
+          <a
+            href="#"
+            class="link-body-emphasis link-offset-2 link-underline-opacity-0"
+            >Culture</a
+          >
+        </p>
+        <p>
+          <a
+            href="#"
+            class="link-body-emphasis link-offset-2 link-underline-opacity-0"
+            >Business</a
+          >
+        </p>
+        <p>
+          <a
+            href="#"
+            class="link-body-emphasis link-offset-2 link-underline-opacity-0"
+            >politics</a
+          >
+        </p>
+        <p>
+          <a
+            href="#"
+            class="link-body-emphasis link-offset-2 link-underline-opacity-0"
+            >Opinion</a
+          >
+        </p>
+        <p>
+          <a
+            href="#"
+            class="link-body-emphasis link-offset-2 link-underline-opacity-0"
+            >Science</a
+          >
+        </p>
+        <p>
+          <a
+            href="#"
+            class="link-body-emphasis link-offset-2 link-underline-opacity-0"
+            >Health</a
+          >
+        </p>
+        <p>
+          <a
+            href="#"
+            class="link-body-emphasis link-offset-2 link-underline-opacity-0"
+            >Style</a
+          >
+        </p>
+        <p>
+          <a
+            href="#"
+            class="link-body-emphasis link-offset-2 link-underline-opacity-0"
+            >Travel</a
+          >
+        </p>
+      </div>
     </nav>
     <main class="container">
-        <div class="bg-body-secondary rounded">
-            <div class="p-3 mb-2 bg-body-secondary">.bg-body-secondary</div>
-            <h1 class="fw-bold display-4 fst-italic text-white w-50">Title of a longer
-                featured blogpost</h1>
+      <div class="secondary-bg rounded p-5" data-bs-theme="emphasis">
+        <h1 class="fw-semibold display-4 fst-italic text-white w-50">
+          Title of a longer featured blogpost
+        </h1>
+        <p class="w-50 text-white fw-light fs-5">
+          Multiple lines of text that form the lede, informing new readers
+          quickly and efficiently about what's most interesting in this post's
+          contents.
+        </p>
+        <p>
+          <a
+            class="link-opacity-100 link-secondary text-white fs-5 fw-bold"
+            href="#"
+            >Continue Reading...</a
+          >
+        </p>
+      </div>
+      <div class="d-flex mt-4 gap-4">
+        <div
+          class="card mb-3 text-bg-dark border-secondary overflow-hidden"
+          style="max-width: 50%"
+        >
+          <div class="row g-0">
+            <div class="col-md-8">
+              <div class="card-body">
+                <h5 class="card-title text-primary fs-5">World</h5>
+                <p class="fs-3">Featured Post</p>
+                <p class="card-text text-secondary">Nov 12</p>
+                <p class="card-text">
+                  This is a wider card with supporting text below as a natural
+                  lead-in to additional content.
+                </p>
+                <p>
+                  <a
+                    class="link-opacity-100 link-secondary text-primary text-decoration-none border-bottom border-primary"
+                    href="#"
+                    >Continue Reading</a
+                  >
+                </p>
+              </div>
+            </div>
+            <div class="col-md-4 bg-secondary">
+              <!-- <img src="..." class="img-fluid rounded-start" alt="thumbnail"> -->
+            </div>
+          </div>
         </div>
+        <div
+          class="card mb-3 text-bg-dark border-secondary overflow-hidden"
+          style="max-width: 50%"
+        >
+          <div class="row overflow-hidden">
+            <div class="col-md-8">
+              <div class="card-body d-flex flex-column">
+                <h5
+                  class="card-title text-success-emphasis fs-5"
+                  data-bs-theme="dark"
+                >
+                  World
+                </h5>
+                <p class="fs-3">Post Title</p>
+                <p class="card-text text-secondary">Nov 12</p>
+                <p class="card-text">
+                  This is a wider card with supporting text below as a natural
+                  lead-in to additional content.
+                </p>
+                <p>
+                  <a
+                    class="link-opacity-100 link-secondary text-primary text-decoration-none border-bottom border-primary"
+                    href="#"
+                    >Continue Reading</a
+                  >
+                </p>
+              </div>
+            </div>
+            <div class="col-md-4 bg-secondary">
+              <!-- <img src="..." class="img-fluid rounded-start" alt="thumbnail"> -->
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="row mt-4">
+        <div class="col-md-8 pe-3 pb-5">
+          <div class="fst-italic fs-3 py-3 border-bottom fw-semibold">
+            From the Firehose
+          </div>
+          <div class="w-100" style="">
+            <div class="mt-3">
+              <div>
+                <h2 class="fs-1">Sample blog post</h2>
+                <p class="text-secondary">
+                  January 1, 2021 by <a href="" class="link-primary">Mark</a>
+                </p>
+              </div>
+              <div>
+                <p>
+                  This blog post shows a few different types of content that's
+                  supported and styled with Bootstrap. Basic typography, lists,
+                  tables, images, code, and more are all supported as expected.
+                </p>
+                <p class="border-top pt-3">
+                  This is some additional paragraph placeholder content. It has
+                  been written to fill the available space and show how a longer
+                  snippet of text affects the surrounding content. We'll repeat
+                  it often to keep the demonstration flowing, so be on the
+                  lookout for this exact same string of text.
+                </p>
+
+                <p class="fs-2 fw-semibold">Blackquotes</p>
+                <p>This is an example blockquote in action:</p>
+                <p class="fs-5">Quoted text goes here.</p>
+                <p>
+                  This is some additional paragraph placeholder content. It has
+                  been written to fill the available space and show how a longer
+                  snippet of text affects the surrounding content. We'll repeat
+                  it often to keep the demonstration flowing, so be on the
+                  lookout for this exact same string of text.
+                </p>
+                <p>Example Lists</p>
+                <p>
+                  This is some additional paragraph placeholder content. It's a
+                  slightly shorter version of the other highly repetitive body
+                  text used throughout. This is an example unordered list:
+                </p>
+                <ul>
+                  <li>First list item</li>
+                  <li>Second list item with a longer description</li>
+                  <li>Third list item to close it out</li>
+                </ul>
+                <p>And this is an ordered list:</p>
+                <ol>
+                  <li>First list item</li>
+                  <li>Second list item with a longer description</li>
+                  <li>Third list item to close it out</li>
+                </ol>
+                <p>And this is a definition list:</p>
+                <dl>
+                  <dt>Hyper Text Markup Language (HTML)</dt>
+                  <dd>
+                    The language used to describe and define the content of a
+                    Web page
+                  </dd>
+                  <dt>Cascading Style Sheets (CSS)</dt>
+                  <dd>Used to describe the appearance of Web content</dd>
+                  <dt>JavaScript (JS)</dt>
+                  <dd>
+                    The programming language used to build advanced Web sites
+                    and applications
+                  </dd>
+                </dl>
+                <div>
+                  <p class="fs-2 fw-semibold">Inline HTML elements</p>
+                  <p>
+                    HTML defines a long list of available inline tags, a
+                    complete list of which can be found on the
+                    <a href="">Mozilla Developer Network</a>.
+                  </p>
+                  <ul>
+                    <li>
+                      <strong>To bold text, use </strong
+                      ><code>&lt;strong&gt;</code>.
+                    </li>
+                    <li>
+                      <em>To italicize text, use </em><code>&lt;em&gt;</code>.
+                    </li>
+                    <li>
+                      Abbreviations, like
+                      <span class="border-bottom-dotted">HTML</span> should
+                      use<code>&lt;abbr&gt;</code>, with an optional
+                      <code>title</code> attribute for the full phrase.
+                    </li>
+                    <li>
+                      Citations, like <cite>— Mark Otto</cite> should use
+                      <code>&lt;cite&gt;</code>.
+                    </li>
+                    <li>
+                      <del>Deleted</del> text should use
+                      <code>&lt;del&gt;</code> and <ins>inserted</ins> text
+                      should use <code>&lt;ins&gt;</code>.
+                    </li>
+                    <li>
+                      Superscript <sup>text</sup> uses
+                      <code>&lt;sup&gt;</code> and subscript
+                      <sub>text</sub> uses <code>&lt;sub&gt;</code>.
+                    </li>
+                  </ul>
+                </div>
+                <p>
+                  Most of these elements are styled by browsers with few
+                  modifications on our part.
+                </p>
+                <div>
+                  <p class="fs-2 fw-bold">Heading</p>
+                  <p>
+                    This is some additional paragraph placeholder content. It
+                    has been written to fill the available space and show how a
+                    longer snippet of text affects the surrounding content.
+                    We'll repeat it often to keep the demonstration flowing, so
+                    be on the lookout for this exact same string of text.
+                  </p>
+
+                  <p class="fs-3 fw-semibold">Sub-heading</p>
+                  <p>
+                    This is some additional paragraph placeholder content. It
+                    has been written to fill the available space and show how a
+                    longer snippet of text affects the surrounding content.
+                    We'll repeat it often to keep the demonstration flowing, so
+                    be on the lookout for this exact same string of text.
+                  </p>
+
+                  <p><small>Example Code Block</small></p>
+                  <p>
+                    This is some additional paragraph placeholder content. It's
+                    a slightly shorter version of the other highly repetitive
+                    body text used throughout.
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="mt-5">
+              <div>
+                <h2 class="fs-1">Another blog post</h2>
+                <p class="text-secondary">
+                  December 23, 2020 by <a href="" class="link-primary">Jacob</a>
+                </p>
+              </div>
+              <div>
+                <p>
+                  This is some additional paragraph placeholder content. It has
+                  been written to fill the available space and show how a longer
+                  snippet of text affects the surrounding content. We'll repeat
+                  it often to keep the demonstration flowing, so be on the
+                  lookout for this exact same string of text.
+                </p>
+                <p>
+                  Longer quote goes here, maybe with some
+                  <strong>emphasized text</strong> in the middle of it.
+                </p>
+                <p>
+                  This is some additional paragraph placeholder content. It has
+                  been written to fill the available space and show how a longer
+                  snippet of text affects the surrounding content. We'll repeat
+                  it often to keep the demonstration flowing, so be on the
+                  lookout for this exact same string of text.
+                </p>
+
+                <div>
+                  <p class="fs-3 fw-semibold">Example Table</p>
+                  <p>And don't forget about tables in these posts:</p>
+                  <table class="table">
+                    <thead>
+                      <tr>
+                        <th scope="col">Name</th>
+                        <th scope="col">Upvotes</th>
+                        <th scope="col">Downvotes</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>Alice</td>
+                        <td>10</td>
+                        <td>11</td>
+                      </tr>
+                      <tr>
+                        <td>Bob</td>
+                        <td>4</td>
+                        <td>3</td>
+                      </tr>
+                      <tr>
+                        <td>Charlie</td>
+                        <td>7</td>
+                        <td>9</td>
+                      </tr>
+                      <tr>
+                        <td>Totals</td>
+                        <td>21</td>
+                        <td>23</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                  <p>
+                    This is some additional paragraph placeholder content. It's
+                    a slightly shorter version of the other highly repetitive
+                    body text used throughout.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <div class="mt-5">
+              <div>
+                <h2 class="fs-1">New feature</h2>
+                <p class="text-secondary">
+                  December 14, 2020 by <a href="" class="link-primary">Chris</a>
+                </p>
+              </div>
+              <div>
+                <p>
+                  This is some additional paragraph placeholder content. It has
+                  been written to fill the available space and show how a longer
+                  snippet of text affects the surrounding content. We'll repeat
+                  it often to keep the demonstration flowing, so be on the
+                  lookout for this exact same string of text.
+                </p>
+                <ul>
+                  <li>First list item</li>
+                  <li>Second list item with a longer description</li>
+                  <li>Third list item to close it out</li>
+                </ul>
+                <p>
+                  This is some additional paragraph placeholder content. It's a
+                  slightly shorter version of the other highly repetitive body
+                  text used throughout.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="mt-5">
+            <button type="button" class="btn btn-outline-primary">Older</button>
+            <button type="button" class="btn btn-outline-secondary" disabled>
+              Newer
+            </button>
+          </div>
+        </div>
+        <div
+          class="col-md-4 sticky-top"
+          style="top: 2.3em; height: fit-content"
+        >
+          <div class="tertiary-bg p-4 rounded">
+            <div class="fs-4 fst-italic fw-medium">About</div>
+            <div class="card-body">
+              <p class="card-text">
+                Customize this section to tell your visitors a little bit about
+                your publication, writers, content, or something else entirely.
+                Totally up to you..
+              </p>
+            </div>
+          </div>
+          <div class="mt-3">
+            <p class="fs-4 fst-italic fw-semibold">Recent Posts</p>
+            <div class="row px-3" style="height: 7em">
+              <div class="col-4 d-flex w-100 row border-top pt-3">
+                <div class="bg-secondary col-4">
+                  <img src="" alt="" />
+                </div>
+                <div class="col-8 d-flex flex-column justify-content-center">
+                  <p class="p-0 m-0 fw-semibold">Example blog post title</p>
+                  <p><small>January 15, 2024</small></p>
+                </div>
+              </div>
+            </div>
+            <div class="row px-3 mt-3" style="height: 7em">
+              <div class="col-4 d-flex w-100 row border-top pt-3">
+                <div class="bg-secondary col-4">
+                  <img src="" alt="" />
+                </div>
+                <div class="col-8 d-flex flex-column justify-content-center">
+                  <p class="p-0 m-0 fw-semibold">
+                    This is another blog post title
+                  </p>
+                  <p><small>January 14, 2024</small></p>
+                </div>
+              </div>
+            </div>
+            <div class="row px-3 mt-3" style="height: 7em">
+              <div class="col-4 d-flex w-100 row border-top pt-3">
+                <div class="bg-secondary col-4">
+                  <img src="" alt="" />
+                </div>
+                <div class="col-8 d-flex flex-column justify-content-center">
+                  <p class="p-0 m-0 fw-semibold">
+                    Longer blog post title: This one has multiple lines!
+                  </p>
+                  <p><small>January 13, 2024</small></p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="p-4">
+            <p class="fs-4 fst-italic fw-medium">Archives</p>
+            <div class="">
+              <div class="nav-list"><a href="">March 2021</a></div>
+              <div class="nav-list"><a href="">February 2021</a></div>
+              <div class="nav-list"><a href="">January 2021</a></div>
+              <div class="nav-list"><a href="">December 2020</a></div>
+              <div class="nav-list"><a href="">November 2020</a></div>
+              <div class="nav-list"><a href="">October 2020</a></div>
+              <div class="nav-list"><a href="">September 2020</a></div>
+              <div class="nav-list"><a href="">August 2020</a></div>
+              <div class="nav-list"><a href="">July 2020</a></div>
+              <div class="nav-list"><a href="">June 2020</a></div>
+              <div class="nav-list"><a href="">May 2020</a></div>
+              <div class="nav-list"><a href="">April 2020</a></div>
+            </div>
+          </div>
+          <div class="p-4">
+            <p class="fs-4 fst-italic fw-medium">Elsewhere</p>
+            <div>
+              <div><a href="">Github</a></div>
+              <div><a href="">social</a></div>
+              <div><a href="">Facebook</a></div>
+            </div>
+          </div>
+        </div>
+      </div>
     </main>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js" integrity="sha384-k6d4wzSIapyDyv1kpU366/PK5hCdSbCRGRCMv+eplOQJWyd1fbcAu9OCUj5zNLiq" crossorigin="anonymous"></script>
+    <footer class="bg-body-tertiary d-flex flex-column justify-content-center align-items-center gap-2" style="height: 25vh;">
+      <div>Blog template built for <a href="">Bootstrap</a> by <a href="">@mdo</a>.</div>
+      <div><a href="">Back to top</a></div>
+    </footer>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-k6d4wzSIapyDyv1kpU366/PK5hCdSbCRGRCMv+eplOQJWyd1fbcAu9OCUj5zNLiq"
+      crossorigin="anonymous"
+    ></script>
     <!-- <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script> -->
     <!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.min.js" integrity="sha384-VQqxDN0EQCkWoxt/0vsQvZswzTHUVOImccYmSyhJTp7kGtPed0Qcx8rK9h9YEgx+" crossorigin="anonymous"></script> -->
   </body>

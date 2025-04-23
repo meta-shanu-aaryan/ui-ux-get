@@ -4,11 +4,34 @@
     box-sizing: border-box;
 }
 
-body{
-    width: 100%;
-    background: #212529;
-}
-
 .search-icon{
     width: 25px;
+}
+
+
+.text-success-emphasis{
+    color: var(	--bs-success-text-emphasis);
+}
+
+.secondary-bg{
+    background: var(--bs-secondary-bg);
+}
+
+.tertiary-bg{
+    background-color: var(--bs-tertiary-bg);
+}
+
+.border-bottom-dotted{
+    border: 0px ;
+    border-bottom: 2px;
+    border-style: dotted;
+}
+
+.nav-list{
+    list-style: none;
+    list-style-position: inside;
+}
+
+.bg-body-tertiary{
+    background: var(--bs-tertiary-bg);
 }
