@@ -53,9 +53,19 @@
     flex-direction: column !important;
 }
 
-.c-scroll{
-    scrollbar-width: thin !important;
-    scrollbar-color: #fff #afafaf !important;
+.c-scroll::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px #ffffff;
+    background-color: transparent;
+}
+
+.c-scroll::-webkit-scrollbar {
+    width: 5px;
+    background-color: #ffffff;
+}
+
+.c-scroll::-webkit-scrollbar-thumb {
+    background-color: #b3b3b3;
+    border-radius: 20px;
 }
 
 .background-primary{
@@ -207,4 +217,16 @@
 
 .footer-bg{
     background: #f9f9f9;
+}
+
+main>div:nth-child(1){
+    z-index: 4;
+}
+main>div:nth-child(2){
+    z-index: 1;
+}
+
+#side>button{
+    z-index: 5 !important;
+    right: -250px;
 }

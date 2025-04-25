@@ -23,7 +23,8 @@
 
 <body>
   <main class="d-flex">
-    <div class="position-md-static col-md-2 vh-100 overflow-auto c-scroll">
+    <div class="position-absolute col-6 col-md-2 vh-100 overflow-auto c-scroll bg-white position-relative d-none d-md-block" id="side">
+      <button type="button" class="btn btn-danger position-relative text-white rounded d-md-none" id="side-close"><i class="bi bi-x"></i></button>
       <div class="d-flex justify-content-center align-items-center py-4 sticky-top bg-white">
         <a href="#"
           class="link-underline link-underline-opacity-0 text-secondary fs-5 fw-bold d-flex align-items-center gap-2"><i
@@ -248,10 +249,10 @@
       </div>
     </div>
     <div class="col-12 col-md-10 background-primary vh-100 overflow-auto">
-      <nav class="w-100 bg-accent px-3 d-flex justify-content-between align-items-center">
-        <div class="ham-menu d-md-none">
+      <nav class="w-100 bg-accent px-3 d-flex justify-content-between align-items-center" >
+        <button class="ham-menu d-md-none navbtn" id="ham-menu">
           <div><i class="bi bi-list fs-5"></i></div>
-        </div>
+        </button>
         <div id="searchbar" class="py-3 d-none d-md-block">
           <input type="text" id="searchbar" class="bg-tert px-3 py-1 rounded-pill" placeholder="Search...">
           <a href=""><i class="bi bi-search"></i></a>
@@ -336,7 +337,7 @@
                   </path>
                 </svg></span>
             </button>
-            <div class="absolute rounded">
+            <div class="absolute rounded border" style="z-index: 2;">
               <button class="navbtn d-flex justify-content-between gap-4 py-1 px-3">
                 <span>English</span>
                 <span><svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 32 32">
@@ -659,7 +660,7 @@
                 <span class="visually-hidden">unread messages</span>
               </span>
             </button>
-            <div class="absolute rounded text-black message-notification rounded overflow-hidden">
+            <div class="absolute rounded text-black message-notification rounded overflow-hidden border" style="z-index: 2;">
               <div class="d-flex px-2 justify-content-between align-items-center background-primary py-2">
                 <span>Messages</span>
                 <span
@@ -702,7 +703,7 @@
                 <span class="visually-hidden">unread messages</span>
               </span>
             </button>
-            <div class="absolute rounded text-black message-notification rounded overflow-hidden">
+            <div class="absolute rounded text-black message-notification rounded overflow-hidden border" style="z-index: 2;">
               <div class="d-flex px-2 justify-content-between align-items-center background-primary py-2">
                 <span>Messages</span>
                 <span
@@ -741,7 +742,7 @@
             <button type="button" class="collapsable navbtn text-white fs-5 position-relative profile">
 
             </button>
-            <div class="absolute rounded text-black rounded overflow-hidden profile-div">
+            <div class="absolute rounded text-black rounded overflow-hidden profile-div border" style="z-index: 2;">
               <div class="d-flex px-3 justify-content-between align-items-center background-primary py-2">
                 <span>Welcome</span>
               </div>
@@ -773,7 +774,7 @@
 
         </div>
       </nav>
-      <div class="p-4">
+      <div class="p-4 c-scroll">
         <div class="d-flex justify-content-between">
           <p class="fs-5 fw-bold">Dashboard</p>
           <p>Annex / Dashboard</p>
@@ -1086,7 +1087,7 @@
                     </div>
                   </div>
                 </div>
-                <div class="card facebook-bg text-white px-5 py-2">
+                <div class="card facebook-bg text-white px-5 py-2 mt-4">
                   <div class="card-body d-flex flex-column align-items-center">
                     <div class="d-flex mb-4 justify-content-center align-items-center w-100"><i
                         class="bi bi-facebook fs-1"></i></div>
@@ -1191,7 +1192,7 @@
                           <span class="fs-5 fw-medium">32°</span><span>Partly Cloudy</span><span>15Km/h-</span><span>37%</span>
                         </div>
                       </div>
-                      <div class="d-flex">
+                      <div class="d-flex gap-4">
                         <div>
                           <div class="d-flex flex-column align-items-center">
                             <span>Mon</span>
@@ -1201,7 +1202,7 @@
                             <span class="fs-5 fw-medium">38°</span>
                           </div>
                         </div>
-                        <div class="">
+                        <div class="d-flex flex-column align-items-center">
                           <div class="d-flex flex-column align-items-center">
                             <span>Mon</span>
                             <i class="bi bi-wind fs-4"></i>
