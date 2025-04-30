@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Bootstrap demo</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-SgOJa3DmI69IUzQ2PVdRZhwQ+dy64/BUtbMJw1MZ8t5HZApcHrRKUc4W0kG879m7"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <main class="" data-bs-theme="light">
+      <nav
+        class="navbar navbar-expand-lg sticky-top bg-body-tertiary border-bottom"
+      >
+        <div class="container-fluid">
+          <a class="navbar-brand" href="#">meta<span>Parking</span></a>
+        </div>
+      </nav>
+      <section class="vh-100 position-relative d-flex" id="hero">
+        <div class="w-50 p-5 d-flex flex-column h-100 pt-md-5">
+          <p class="fs-1 fw-semibold">
+            meta<span class="text-primary">Parking</span>
+          </p>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste nulla
+            ex esse explicabo hic dolorum possimus deleniti omnis officia,
+            obcaecati doloremque cum commodi autem recusandae est quae adipisci!
+          </p>
+        </div>
+        <div class="w-50 overflow-hidden">
+          <img src="./images/cars-5512851_1280.jpg" alt="" class="w-100" />
+        </div>
+      </section>
+
+      <section class="vh-100 w-100 d-flex border-top">
+        <div class="w-50 h-100 p-5">
+          <p class="fs-1 fw-semibold ms-5">Employee Registration</p>
+          <img src="./images/Mobile login-rafiki.svg" alt="" class="h-75" />
+        </div>
+
+        <div class="w-50 p-5 h-100 d-flex flex-column justify-content-center">
+          <p class="fs-3 fw-medium">Register Yourself</p>
+          <form data-bs-theme="light" class="" id="emp-form">
+            <div class="mb-3">
+              <label for="exampleInputEmail1" class="form-label"
+                >Full Name</label
+              >
+              <input
+                type="text"
+                class="form-control"
+                id="exampleInputEmail1"
+                aria-describedby="emailHelp"
+              />
+              <div id="emailHelp" class="form-text">
+                Enter your Full Name and press enter or next.
+              </div>
+            </div>
+            <div class="mb-3 d-none">
+              <label for="">Gender</label>
+              <div class="d-flex gap-4">
+                <div class="form-check">
+                  <input
+                    class="form-check-input"
+                    type="radio"
+                    name="gender"
+                    id="radioDefault1"
+                    value="male"
+                  />
+                  <label class="form-check-label" for="radioDefault1">
+                    Male
+                  </label>
+                </div>
+                <div class="form-check">
+                  <input
+                    class="form-check-input"
+                    type="radio"
+                    name="gender"
+                    id="radioDefault2"
+                    checked
+                    value="female"
+                  />
+                  <label class="form-check-label" for="radioDefault2">
+                    Female
+                  </label>
+                </div>
+              </div>
+            </div>
+            <div class="mb-3 d-none">
+              <label for="exampleInputPassword1" class="form-label"
+                >E-mail</label
+              >
+              <input
+                type="email"
+                class="form-control"
+                id="exampleInputPassword1"
+              />
+            </div>
+            <div class="mb-3 d-none">
+              <label for="exampleInputPassword1" class="form-label"
+                >Password</label
+              >
+              <input
+                type="password"
+                class="form-control"
+                id="exampleInputPassword1"
+                onchange="(e)=>{console.log(e.value)}"
+              />
+            </div>
+            <div class="mb-3 d-none">
+              <label for="exampleInputPassword1" class="form-label"
+                >Confirm Password</label
+              >
+              <input
+                type="password"
+                class="form-control"
+                id="exampleInputPassword1"
+              />
+            </div>
+            <div class="mb-3 d-none">
+              <label for="exampleInputPassword1" class="form-label"
+                >Contact Number</label
+              >
+              <input
+                type="number"
+                class="form-control"
+                id="exampleInputPassword1"
+              />
+            </div>
+            <button id="emp-next" class="btn btn-primary">Next</button>
+            <!-- <button type="submit" class="btn btn-primary" id="submitbtn">
+              Submit
+            </button> -->
+          </form>
+          <div id="ticket-no" class="d-none"></div>
+          <div></div>
+        </div>
+      </section>
+
+      <section class="w-100 vh-100 d-flex flex-row-reverse p-2">
+        <div class="w-50 d-flex flex-column justify-content-start pt-3">
+          <p class="fs-1">Vehicle Registration</p>
+          <img src="./images/driving school-rafiki.svg" alt="" class="h-50" />
+        </div>
+        <div class="w-50 p-5">
+          <div>Enter Your Vehicle Details</div>
+          <form action="" data-bs-theme="light" class="p-5">
+            <div class="mb-3">
+              <label for="exampleInputEmail1" class="form-label"
+                >Vehicle Name</label
+              >
+              <input
+                type="text"
+                class="form-control"
+                id="exampleInputEmail1"
+                aria-describedby="emailHelp"
+              />
+              <div id="emailHelp" class="form-text">
+                Enter your Vehicle Name and press enter or next.
+              </div>
+            </div>
+            <div class="mb-3">
+              <label for="exampleInputEmail1" class="form-label"
+                >Vehicle Type</label
+              >
+              <select class="form-select mb-3" aria-label="select example">
+                <option selected>Choose Vehicle Type</option>
+                <option value="bicycle">Bicycle</option>
+                <option value="bike">Bike</option>
+                <option value="car">Car</option>
+                <option value="truck">Truck</option>
+              </select>
+              <div id="emailHelp" class="form-text">
+                Enter your Vehicle Name and press enter or next.
+              </div>
+            </div>
+            <div class="mb-3">
+              <label for="exampleInputEmail1" class="form-label"
+                >Vehicle Name</label
+              >
+              <input
+                type="text"
+                class="form-control"
+                id="exampleInputEmail1"
+                aria-describedby="emailHelp"
+              />
+              <div id="emailHelp" class="form-text">
+                Enter your Vehicle Name and press enter or next.
+              </div>
+            </div>
+            <div class="mb-3">
+              <label for="exampleInputEmail1" class="form-label"
+                >Vehicle Name</label
+              >
+              <input
+                type="text"
+                class="form-control"
+                id="exampleInputEmail1"
+                aria-describedby="emailHelp"
+              />
+              <div id="emailHelp" class="form-text">
+                Enter your Vehicle Name and press enter or next.
+              </div>
+            </div>
+            <div class="mb-3">
+              <label for="exampleInputEmail1" class="form-label"
+                >Vehicle Name</label
+              >
+              <input
+                type="text"
+                class="form-control"
+                id="exampleInputEmail1"
+                aria-describedby="emailHelp"
+              />
+              <div id="emailHelp" class="form-text">
+                Enter your Vehicle Name and press enter or next.
+              </div>
+            </div>
+          </form>
+        </div>
+      </section>
+    </main>
+    <script src="script.js"></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-k6d4wzSIapyDyv1kpU366/PK5hCdSbCRGRCMv+eplOQJWyd1fbcAu9OCUj5zNLiq"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>
