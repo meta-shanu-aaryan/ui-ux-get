@@ -11,7 +11,27 @@ let ticketNumber = 0;
 let empEnt = document.querySelectorAll("#emp-form input")
 
 
-const employeeFormHandler = (e)=>{
+const passwordVerification = (password)=>{
+    let strength = 0;
+    const hasUppercase = /[A-Z]/.test(password);
+    const hasLowercase = /[a-z]/.test(password);
+    const hasSpecialChar = /[~`!#$%\^&*+=\-\[\]\\';,/{}|\\":<>\?]/.test(password);
+    const hasNumeric = /\d/.test(password)
+
+    if(hasUppercase) strength++;
+    if(hasLowercase) strength++;
+    if(hasSpecialChar) strength++;
+    if(hasNumeric) strength++;
+
+    return strength;
+}
+
+
+const isNumeric = (str)=>{
+    return /\d/.test(str);
+}
+
+const employeeFormHandler = (e) => {
     e.preventDefault();
     if(empIndex+1 == empForm.length){
         empEnt.forEach(inp => {
@@ -34,12 +54,16 @@ const employeeFormHandler = (e)=>{
         elem.innerText = `your ticket number is ${ticketNumber}`;
         elem.classList.remove("d-none")
     }else{
-        console.log(empForm[empIndex].getElementsByTagName("input")[0].value)
-        console.log(empForm[empIndex].getElementsByTagName("input")[0].value.length)
-        if(empForm[empIndex].getElementsByTagName("input")[0].value.length<3){
+        let elem = empForm[empIndex].getElementsByTagName("input")[0];
+        
+        if(elem.getAttribute("name") === "fullName" && (elem.value.length<3 || isNumeric(elem.value))){
             empForm[empIndex].getElementsByTagName("input")[0].classList.add("border-danger")
             empForm[empIndex].getElementsByTagName("input")[0].classList.add("border-3")
-        }else{
+        }else if((elem.getAttribute("name") === "password" || elem.getAttribute("name") === "cnfPassword") && passwordVerification(elem.value)!==4){
+            empForm[empIndex].getElementsByTagName("input")[0].classList.add("border-danger")
+            empForm[empIndex].getElementsByTagName("input")[0].classList.add("border-3")
+        }
+        else{
             empForm[empIndex].classList.add("d-none");
             empForm[++empIndex].classList.remove("d-none");
         }
