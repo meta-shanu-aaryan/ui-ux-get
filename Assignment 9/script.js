@@ -48,6 +48,7 @@ var passwordVerify = function (password) {
         strength++;
     return strength;
 };
+var emp1 = new Employee;
 var isNum = function (str) {
     return /\d/.test(str);
 };
@@ -56,7 +57,14 @@ var empForm = document.querySelectorAll("#emp-form>div");
 var empNext = document.querySelector("#emp-next");
 var empEnt = document.querySelectorAll("#emp-form input");
 var empRegistrationNumber = 0;
-var empObj = {};
+var empObj = {
+    "password": "",
+    "cnfPassword": "",
+    "contact": "",
+    "fullName": "",
+    "email": "",
+    "gender": "",
+};
 var empFormHandler = function (e) {
     e.preventDefault();
     console.log();
@@ -64,22 +72,27 @@ var empFormHandler = function (e) {
         empEnt.forEach(function (inp) {
             if (inp.type === "radio") {
                 if (inp.checked) {
-                    localStorage.setItem(inp.tagName, inp.value);
-                    console.log(inp.value);
+                    empObj[inp.name] = inp.value;
                 }
             }
             else {
-                localStorage.setItem(inp.tagName, inp.value);
-                console.log(inp.value);
+                empObj[inp.name] = inp.value;
             }
         });
+        emp1.confirmPassword = empObj.cnfPassword;
+        emp1.contact = empObj.password;
+        emp1.emailId = empObj.email;
+        emp1.fullName = empObj.fullName;
+        emp1.gender = empObj.gender === "male" ? gender.male : gender.female;
         var elem = document.getElementById("ticket-no");
         empRegistrationNumber++;
         var currForm = document.getElementById("emp-form");
         currForm !== null && currForm.classList.add("d-none");
         localStorage.setItem("ticketNumber", empRegistrationNumber.toString());
-        elem !== null && elem.innerText === "your ticket number is ".concat(empRegistrationNumber);
+        if (elem !== null)
+            elem.innerText = "your ticket number is ".concat(empRegistrationNumber);
         elem !== null && elem.classList.remove("d-none");
+        console.log(empObj);
     }
     else {
         var elem = empForm[empIndex].getElementsByTagName("input")[0];
@@ -92,19 +105,15 @@ var empFormHandler = function (e) {
             empForm[empIndex].getElementsByTagName("input")[0].classList.add("border-danger");
             empForm[empIndex].getElementsByTagName("input")[0].classList.add("border-3");
         }
+        else if (elem.getAttribute("name") === "cnfPassword" && elem.value !== empObj.password) {
+            empForm[empIndex].getElementsByTagName("input")[0].classList.add("border-danger");
+            empForm[empIndex].getElementsByTagName("input")[0].classList.add("border-3");
+        }
+        else if (elem.getAttribute("name") === "contact" && (!isNum(elem.value) && elem.value.length < 8)) {
+            empForm[empIndex].getElementsByTagName("input")[0].classList.add("border-danger");
+            empForm[empIndex].getElementsByTagName("input")[0].classList.add("border-3");
+        }
         else {
-            var inpElem = empForm[empIndex].querySelectorAll("input");
-            inpElem.forEach(function (ever) {
-                if (ever.type === "radio") {
-                    if (ever.checked) {
-                        empObj["".concat(ever.name)] = ever.value;
-                    }
-                }
-                else {
-                    empObj["".concat(ever.name)] = ever.value;
-                }
-            });
-            console.log(empObj);
             empForm[empIndex].classList.add("d-none");
             empForm[++empIndex].classList.remove("d-none");
         }
@@ -114,8 +123,69 @@ if (empNext !== null) {
     empNext.addEventListener("click", empFormHandler);
 }
 empEnt.forEach(function (eve) { return (eve.addEventListener("keypress", function (e) {
-    console.log("dadedad");
     if (e.key === "Enter") {
         empFormHandler(e);
     }
 })); });
+var passwordInput = document.querySelectorAll("#emp-form input[type=\"password\"]");
+passwordInput.forEach(function (passInput) { return (passInput.addEventListener("input", function (e) {
+    // console.log(passInput.value)
+    if (passInput.value.length < 8) {
+        passInput.classList.remove("border");
+        passInput.classList.add("border-danger");
+        passInput.classList.add("border-3");
+    }
+    else {
+        passInput.classList.remove("border-danger");
+        passInput.classList.add("border-success");
+    }
+})); });
+var vehicleInputIndex = 0;
+var vehicleForm = document.querySelectorAll("#vehicle-form>div");
+var vehicleInput = document.querySelectorAll("#vehicle-form input");
+var vehicleFormHandler = function (e) {
+    e.preventDefault();
+    if (vehicleInputIndex + 1 == vehicleForm.length) {
+        var vehForm = document.getElementById("vehicle-form");
+        if (vehForm !== null) {
+            vehForm.classList.add("d-none");
+        }
+        var vehConfirmation = document.getElementById("vehicle-confirmation");
+        if (vehConfirmation !== null) {
+            vehConfirmation.classList.remove("d-none");
+        }
+    }
+    else {
+        vehicleForm[vehicleInputIndex].classList.add("d-none");
+        vehicleForm[++vehicleInputIndex].classList.remove("d-none");
+    }
+};
+var vehicleNext = document.getElementById("vehicle-next");
+vehicleNext.addEventListener("click", vehicleFormHandler);
+var displayPriceInDollar = function () {
+    document.querySelectorAll(".price-inr").forEach(function (inrPrice) { return (inrPrice.classList.add("d-none")); });
+    document.querySelectorAll(".price-yen").forEach(function (yenPrice) { return (yenPrice.classList.add("d-none")); });
+    document.querySelectorAll(".price-usd").forEach(function (yenPrice) { return (yenPrice.classList.remove("d-none")); });
+};
+var displayPriceInYen = function () {
+    document.querySelectorAll(".price-inr").forEach(function (inrPrice) { return (inrPrice.classList.add("d-none")); });
+    document.querySelectorAll(".price-usd").forEach(function (yenPrice) { return (yenPrice.classList.add("d-none")); });
+    document.querySelectorAll(".price-yen").forEach(function (yenPrice) { return (yenPrice.classList.remove("d-none")); });
+};
+var displayPriceInInr = function () {
+    document.querySelectorAll(".price-usd").forEach(function (inrPrice) { return (inrPrice.classList.add("d-none")); });
+    document.querySelectorAll(".price-yen").forEach(function (yenPrice) { return (yenPrice.classList.add("d-none")); });
+    document.querySelectorAll(".price-inr").forEach(function (yenPrice) { return (yenPrice.classList.remove("d-none")); });
+};
+var usdBtn = document.getElementById("usd-btn");
+if (usdBtn !== null) {
+    usdBtn.addEventListener("click", displayPriceInDollar);
+}
+var inrBtn = document.getElementById("inr-btn");
+if (inrBtn !== null) {
+    inrBtn.addEventListener("click", displayPriceInInr);
+}
+var yenBtn = document.getElementById("yen-btn");
+if (yenBtn !== null) {
+    yenBtn.addEventListener("click", displayPriceInYen);
+}

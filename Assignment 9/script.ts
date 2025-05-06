@@ -10,7 +10,7 @@ class Employee{
     emailId:string;
     password:string;
     confirmPassword:string;
-    contact:number;
+    contact:string;
 }
 
 
@@ -56,6 +56,8 @@ const passwordVerify = (password:string)=>{
     return strength;
 }
 
+let emp1:Employee = new Employee;
+
 const isNum = (str:string)=>{
     return /\d/.test(str);
 }
@@ -66,7 +68,12 @@ let empNext = document.querySelector<HTMLButtonElement>("#emp-next");
 let empEnt = document.querySelectorAll<HTMLInputElement>("#emp-form input")
 let empRegistrationNumber:number = 0;
 let empObj = {
-
+    "password" : "",
+    "cnfPassword":"",
+    "contact":"",
+    "fullName":"",
+    "email":"",
+    "gender":"",
 }
 
 
@@ -78,23 +85,31 @@ const empFormHandler = (e)=>{
         empEnt.forEach(inp => {
             if(inp.type === "radio"){
                 if(inp.checked){
-                    localStorage.setItem(inp.tagName, inp.value);
-                    console.log(inp.value);
+                    empObj[inp.name] = inp.value;
                 }
             }else{
-                localStorage.setItem(inp.tagName, inp.value);
-                console.log(inp.value);
+                empObj[inp.name] = inp.value;
+                
             }
 
         })
+        emp1.confirmPassword = empObj.cnfPassword;
+        emp1.contact = empObj.password;
+        emp1.emailId = empObj.email;
+        emp1.fullName = empObj.fullName;
+        emp1.gender = empObj.gender==="male"?gender.male:gender.female;
 
-        let elem = document.getElementById("ticket-no");
+
+        let elem = document.getElementById("ticket-no") as HTMLDivElement;
+        
         empRegistrationNumber++;
         const currForm = document.getElementById("emp-form");
         currForm!==null && currForm.classList.add("d-none");
         localStorage.setItem("ticketNumber", empRegistrationNumber.toString());
-        elem!==null && elem.innerText === `your ticket number is ${empRegistrationNumber}`;
+        if(elem!==null) elem.innerText = `your ticket number is ${empRegistrationNumber}`;
         elem!==null && elem.classList.remove("d-none");
+        console.log(empObj);
+        
     }else{
         let elem = empForm[empIndex].getElementsByTagName("input")[0];
         
@@ -106,22 +121,14 @@ const empFormHandler = (e)=>{
             console.log(passwordVerify(elem.value));
             empForm[empIndex].getElementsByTagName("input")[0].classList.add("border-danger")
             empForm[empIndex].getElementsByTagName("input")[0].classList.add("border-3")
-        }
-        else{
-            let inpElem = empForm[empIndex].querySelectorAll<HTMLInputElement>("input");
+        }else if(elem.getAttribute("name") === "cnfPassword" && elem.value!==empObj.password){
+            empForm[empIndex].getElementsByTagName("input")[0].classList.add("border-danger")
+            empForm[empIndex].getElementsByTagName("input")[0].classList.add("border-3")
 
-        inpElem.forEach(ever =>{
-            if(ever.type === "radio"){
-                if(ever.checked){
-                    empObj[`${ever.name}`] = ever.value;
-                }
-            }else{
-                empObj[`${ever.name}`] = ever.value;
-            }
-        })
-
-        console.log(empObj);
-            
+        }else if(elem.getAttribute("name") === "contact" && (!isNum(elem.value) && elem.value.length<8)){
+            empForm[empIndex].getElementsByTagName("input")[0].classList.add("border-danger")
+            empForm[empIndex].getElementsByTagName("input")[0].classList.add("border-3")
+        }else{
             empForm[empIndex].classList.add("d-none");
             empForm[++empIndex].classList.remove("d-none");
         }
@@ -135,9 +142,106 @@ if(empNext!==null){
 
 empEnt.forEach(eve => (
     eve.addEventListener("keypress",(e)=>{
-        console.log("dadedad")
         if(e.key === "Enter"){
             empFormHandler(e);
         }
     })
 ))
+
+const passwordInput = document.querySelectorAll<HTMLInputElement>("#emp-form input[type=\"password\"]");
+
+passwordInput.forEach(passInput=> (
+    passInput.addEventListener("input", (e)=>{
+        // console.log(passInput.value)
+        if(passInput.value.length < 8){
+            passInput.classList.remove("border");
+            passInput.classList.add("border-danger");
+            passInput.classList.add("border-3");
+        }else{
+            passInput.classList.remove("border-danger");
+            passInput.classList.add("border-success");
+        }
+    })
+))
+
+
+let vehicleInputIndex:number = 0;
+
+let vehicleForm = document.querySelectorAll<HTMLDivElement>("#vehicle-form>div");
+
+let vehicleInput = document.querySelectorAll<HTMLInputElement>("#vehicle-form input");
+
+const vehicleFormHandler = (e)=>{
+    e.preventDefault();
+    if(vehicleInputIndex+1 == vehicleForm.length){
+        const vehForm = document.getElementById("vehicle-form") as HTMLFormElement;
+        if(vehForm!==null){
+            vehForm.classList.add("d-none")
+        }
+
+        const vehConfirmation = document.getElementById("vehicle-confirmation");
+        if(vehConfirmation!==null){
+            vehConfirmation.classList.remove("d-none")
+        }
+        
+    }else{
+        vehicleForm[vehicleInputIndex].classList.add("d-none")
+        vehicleForm[++vehicleInputIndex].classList.remove("d-none")
+    }
+}
+
+let vehicleNext = document.getElementById("vehicle-next") as HTMLButtonElement;
+
+vehicleNext.addEventListener("click", vehicleFormHandler);
+
+const displayPriceInDollar = ()=>{
+    document.querySelectorAll(".price-inr").forEach(inrPrice => (
+        inrPrice.classList.add("d-none")
+    ))
+    document.querySelectorAll(".price-yen").forEach(yenPrice =>(
+        yenPrice.classList.add("d-none")
+    ))
+    document.querySelectorAll(".price-usd").forEach(yenPrice =>(
+        yenPrice.classList.remove("d-none")
+    ))
+}
+
+const displayPriceInYen = ()=>{
+    document.querySelectorAll(".price-inr").forEach(inrPrice => (
+        inrPrice.classList.add("d-none")
+    ))
+    document.querySelectorAll(".price-usd").forEach(yenPrice =>(
+        yenPrice.classList.add("d-none")
+    ))
+    document.querySelectorAll(".price-yen").forEach(yenPrice =>(
+        yenPrice.classList.remove("d-none")
+    ))
+}
+
+const displayPriceInInr = ()=>{
+    document.querySelectorAll(".price-usd").forEach(inrPrice => (
+        inrPrice.classList.add("d-none")
+    ))
+    document.querySelectorAll(".price-yen").forEach(yenPrice =>(
+        yenPrice.classList.add("d-none")
+    ))
+    document.querySelectorAll(".price-inr").forEach(yenPrice =>(
+        yenPrice.classList.remove("d-none")
+    ))
+}
+
+const usdBtn = document.getElementById("usd-btn");
+if(usdBtn!==null){
+    usdBtn.addEventListener("click", displayPriceInDollar)
+}
+
+const inrBtn = document.getElementById("inr-btn");
+if(inrBtn!==null){
+    inrBtn.addEventListener("click", displayPriceInInr)
+}
+
+const yenBtn = document.getElementById("yen-btn");
+if(yenBtn!==null){
+    yenBtn.addEventListener("click", displayPriceInYen)
+}
+
