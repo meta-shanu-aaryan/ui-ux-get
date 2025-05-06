@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Bootstrap demo</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-SgOJa3DmI69IUzQ2PVdRZhwQ+dy64/BUtbMJw1MZ8t5HZApcHrRKUc4W0kG879m7"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <main class="" data-bs-theme="light">
+      <nav
+        class="navbar navbar-expand-lg sticky-top bg-body-tertiary border-bottom"
+      >
+        <div class="container-fluid">
+          <a class="navbar-brand" href="#">meta<span>Parking</span></a>
+        </div>
+      </nav>
+      <section class="vh-100 position-relative d-flex" id="hero">
+        <div class="w-50 p-5 d-flex flex-column h-100 pt-md-5">
+          <p class="fs-1 fw-semibold">
+            meta<span class="text-primary">Parking</span>
+          </p>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste nulla
+            ex esse explicabo hic dolorum possimus deleniti omnis officia,
+            obcaecati doloremque cum commodi autem recusandae est quae adipisci!
+          </p>
+        </div>
+        <div class="w-50 overflow-hidden">
+          <img src="./images/cars-5512851_1280.jpg" alt="" class="w-100" />
+        </div>
+      </section>
+
+      <section class="w-100 d-flex border-top">
+        <div class="w-50 h-100 p-5">
+          <p class="fs-1 fw-semibold ms-5">Employee Registration</p>
+          <img src="./images/Mobile login-rafiki.svg" alt="" class="w-75" />
+        </div>
+
+        <div
+          class="w-50 p-5 h-100 d-flex flex-column justify-content-center mt-align card me-5"
+        >
+          <p class="fs-3 fw-medium">Register Yourself</p>
+          <form data-bs-theme="light" class="" id="emp-form">
+            <div class="mb-3">
+              <label for="exampleInputEmail1" class="form-label"
+                >Full Name</label
+              >
+              <input
+                required
+                required
+                type="text"
+                class="form-control"
+                id="exampleInputEmail1"
+                aria-describedby="emailHelp"
+                name="fullName"
+              />
+              <div id="emailHelp" class="form-text">
+                Enter your Full Name and press enter or next.
+              </div>
+            </div>
+            <div class="mb-3 d-none">
+              <label for="">Gender</label>
+              <div class="d-flex gap-4">
+                <div class="form-check">
+                  <input
+                    required
+                    class="form-check-input"
+                    type="radio"
+                    name="gender"
+                    id="radioDefault1"
+                    value="male"
+                  />
+                  <label class="form-check-label" for="radioDefault1">
+                    Male
+                  </label>
+                </div>
+                <div class="form-check">
+                  <input
+                    required
+                    class="form-check-input"
+                    type="radio"
+                    name="gender"
+                    id="radioDefault2"
+                    checked
+                    value="female"
+                  />
+                  <label class="form-check-label" for="radioDefault2">
+                    Female
+                  </label>
+                </div>
+              </div>
+            </div>
+            <div class="mb-3 d-none">
+              <label for="exampleInputPassword1" class="form-label"
+                >E-mail</label
+              >
+              <input
+                required
+                type="email"
+                class="form-control"
+                id="exampleInputPassword1"
+                name="email"
+              />
+              <div id="" class="form-text">
+                Enter your E-mail and press enter or next.
+              </div>
+            </div>
+            <div class="mb-3 d-none">
+              <label for="exampleInputPassword1" class="form-label"
+                >Password</label
+              >
+              <input
+                required
+                type="password"
+                class="form-control"
+                id="exampleInputPassword1"
+                name="password"
+              />
+              <span></span>
+            </div>
+            <div class="mb-3 d-none">
+              <label for="exampleInputPassword1" class="form-label"
+                >Confirm Password</label
+              >
+              <input
+                required
+                type="password"
+                class="form-control"
+                id="exampleInputPassword1"
+                name="confPassword"
+              />
+            </div>
+            <div class="mb-3 d-none">
+              <label for="exampleInputPassword1" class="form-label"
+                >Contact Number</label
+              >
+              <input
+                required
+                type="number"
+                class="form-control"
+                id="exampleInputPassword1"
+                name="contact"
+              />
+            </div>
+            <button id="emp-next" class="btn btn-primary" type="button">
+              Next
+            </button>
+            <!-- <button type="submit" class="btn btn-primary" id="submitbtn">
+              Submit
+            </button> -->
+          </form>
+          <div id="ticket-no" class="d-none fs-3 fw-semibold"></div>
+          <div></div>
+        </div>
+      </section>
+
+      <section class="w-100 d-flex flex-row-reverse p-2">
+        <div
+          class="w-50 d-flex flex-column justify-content-start align-items-center pt-3"
+        >
+          <p class="fs-1 fw-semibold">Vehicle Registration</p>
+          <img src="./images/driving school-rafiki.svg" alt="" class="w-75" />
+        </div>
+        <div class="w-50 p-5 d-flex flex-column mt-5">
+          <p class="fs-4 fw-semibold">Enter Your Vehicle Details</p>
+          <form action="" data-bs-theme="light" class="p-5" id="vehicle-form">
+            <div class="mb-3">
+              <label for="exampleInputEmail1" class="form-label"
+                >Vehicle Name</label
+              >
+              <input
+                required
+                type="text"
+                class="form-control"
+                id="exampleInputEmail1"
+                aria-describedby="emailHelp"
+              />
+              <div id="emailHelp" class="form-text">
+                Enter your Vehicle Name and press enter or next.
+              </div>
+            </div>
+            <div class="mb-3 d-none">
+              <label for="exampleInputEmail1" class="form-label"
+                >Vehicle Type</label
+              >
+              <select class="form-select mb-3" aria-label="select example">
+                <option selected>Choose Vehicle Type</option>
+                <option value="bicycle">Bicycle</option>
+                <option value="bike">Bike</option>
+                <option value="car">Car</option>
+                <option value="truck">Truck</option>
+              </select>
+              <div id="emailHelp" class="form-text">
+                Select your Vehicle Type and press enter or next.
+              </div>
+            </div>
+            <div class="mb-3 d-none">
+              <label for="exampleInputEmail1" class="form-label"
+                >Vehicle Number</label
+              >
+              <input
+                required
+                type="text"
+                class="form-control"
+                id="exampleInputEmail1"
+                aria-describedby="emailHelp"
+              />
+              <div id="emailHelp" class="form-text">
+                Enter your Vehicle Number and press enter or next.
+              </div>
+            </div>
+            <div class="mb-3 d-none">
+              <label for="exampleInputEmail1" class="form-label"
+                >Employee Id</label
+              >
+              <input
+                required
+                type="text"
+                class="form-control"
+                id="exampleInputEmail1"
+                aria-describedby="emailHelp"
+              />
+              <div id="emailHelp" class="form-text">
+                Enter your Employee Id Name and press enter or next.
+              </div>
+            </div>
+            <div class="mb-3 d-none">
+              <label for="exampleInputEmail1" class="form-label"
+                >Identification</label
+              >
+              <textarea class="d-block w-100 border"></textarea>
+              <div id="emailHelp" class="form-text">
+                How can we identify your vehicle.
+              </div>
+            </div>
+            <button class="btn btn-primary" id="vehicle-next">Next</button>
+          </form>
+          <div id="vehicle-confirmation" class="ps-5 fs-5 d-none">
+            Your Vehicle has beem registered successfully.
+          </div>
+        </div>
+      </section>
+      <section class="py-5">
+        <div class="px-5 fs-3 fw-semibold d-flex justify-content-between">
+          <p>Get yout pass now</p>
+          <div>
+            <button class="btn btn-primary" id="inr-btn">INR</button>
+            <button class="btn btn-primary" id="usd-btn">USD</button>
+            <button class="btn btn-primary" id="yen-btn">YEN</button>
+          </div>
+        </div>
+        <div class="row px-5">
+          <div class="col-sm-4 mb-3 mb-sm-0">
+            <div class="card">
+              <div
+                class="card-body d-flex flex-column gap-3 align-items-center"
+              >
+                <h5 class="card-title">Pass for Cycle</h5>
+                <div class="price-inr">
+                  <span class="d-inline-block bg-success p-3 rounded-5"
+                    >₹5/Day</span
+                  >
+                </div>
+                <div class="price-usd d-none">
+                  <span class="d-inline-block bg-success p-3 rounded-5"
+                    >$0.05/Day</span
+                  >
+                </div>
+                <div class="price-yen d-none">
+                  <span class="d-inline-block bg-success p-3 rounded-5"
+                    >¥8.5/Day</span
+                  >
+                </div>
+                <div>
+                  <ul class="list-group list-group-flush text-center price-inr">
+                    <li class="list-group-item">₹5 / Day</li>
+                    <li class="list-group-item">₹100 / Month</li>
+                    <li class="list-group-item">₹500 / Year</li>
+                  </ul>
+                  <ul
+                    class="list-group list-group-flush text-center d-none price-usd"
+                  >
+                    <li class="list-group-item">$0.05 / Day</li>
+                    <li class="list-group-item">$1.18 / Month</li>
+                    <li class="list-group-item">$6 / Year</li>
+                  </ul>
+                  <ul
+                    class="list-group list-group-flush text-center d-none price-yen"
+                  >
+                    <li class="list-group-item">¥8.5 / Day</li>
+                    <li class="list-group-item">¥170 / Month</li>
+                    <li class="list-group-item">¥852 / Year</li>
+                  </ul>
+                </div>
+                <div>
+                  <a href="#" class="btn btn-primary">Go somewhere</a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-4 mb-3 mb-sm-0">
+            <div class="card">
+              <div
+                class="card-body d-flex flex-column gap-3 align-items-center"
+              >
+                <h5 class="card-title">Pass for Bike</h5>
+                <div class="price-inr">
+                  <span class="d-inline-block bg-success p-3 rounded-5"
+                    >₹10/Day</span
+                  >
+                </div>
+                <div class="d-none price-usd">
+                  <span class="d-inline-block bg-success p-3 rounded-5"
+                    >$0.12/Day</span
+                  >
+                </div>
+                <div class="d-none price-yen">
+                  <span class="d-inline-block bg-success p-3 rounded-5"
+                    >¥17/Day</span
+                  >
+                </div>
+                <div>
+                  <ul class="list-group list-group-flush text-center price-inr">
+                    <li class="list-group-item">₹10 / Day</li>
+                    <li class="list-group-item">₹200 / Month</li>
+                    <li class="list-group-item">₹1000 / Year</li>
+                  </ul>
+                  <ul
+                    class="list-group list-group-flush text-center d-none price-usd"
+                  >
+                    <li class="list-group-item">$0.12 / Day</li>
+                    <li class="list-group-item">$2.36 / Month</li>
+                    <li class="list-group-item">$11.8 / Year</li>
+                  </ul>
+                  <ul
+                    class="list-group list-group-flush text-center d-none price-yen"
+                  >
+                    <li class="list-group-item">¥17 / Day</li>
+                    <li class="list-group-item">¥341 / Month</li>
+                    <li class="list-group-item">¥1705 / Year</li>
+                  </ul>
+                </div>
+                <div>
+                  <a href="#" class="btn btn-primary">Go somewhere</a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-4 mb-3 mb-sm-0">
+            <div class="card">
+              <div
+                class="card-body d-flex flex-column gap-3 align-items-center"
+              >
+                <h5 class="card-title">Pass for Car</h5>
+                <div class="price-inr">
+                  <span class="d-inline-block bg-success p-3 rounded-5"
+                    >₹20/Day</span
+                  >
+                </div>
+                <div class="d-none price-usd">
+                  <span class="d-inline-block bg-success p-3 rounded-5"
+                    >$0.23/Day</span
+                  >
+                </div>
+                <div class="d-none price-yen">
+                  <span class="d-inline-block bg-success p-3 rounded-5"
+                    >¥34.1/Day</span
+                  >
+                </div>
+                <div>
+                  <ul class="list-group list-group-flush text-center price-inr">
+                    <li class="list-group-item">₹20 / Day</li>
+                    <li class="list-group-item">₹500 / Month</li>
+                    <li class="list-group-item">₹3500 / Year</li>
+                  </ul>
+                  <ul
+                    class="list-group list-group-flush text-center d-none price-usd"
+                  >
+                    <li class="list-group-item">$0.23 / Day</li>
+                    <li class="list-group-item">$5.9 / Month</li>
+                    <li class="list-group-item">$41.36 / Year</li>
+                  </ul>
+                  <ul
+                    class="list-group list-group-flush text-center d-none price-yen"
+                  >
+                    <li class="list-group-item">¥34.1 / Day</li>
+                    <li class="list-group-item">¥853 / Month</li>
+                    <li class="list-group-item">¥5970 / Year</li>
+                  </ul>
+                </div>
+                <div>
+                  <a href="#" class="btn btn-primary">Get Pass Now</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+    <script src="script.js"></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-k6d4wzSIapyDyv1kpU366/PK5hCdSbCRGRCMv+eplOQJWyd1fbcAu9OCUj5zNLiq"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>

@@ -1,0 +1,16 @@
+.cover{
+    object-fit: cover;
+}
+
+#hero>div:first-child{
+    padding-top: 200px !important;
+}
+
+#hero img{
+    margin-top: 80px;
+    border-radius: 20px 0px 0px 20px;
+}
+
+.mt-align{
+    margin-top: 115px;
+}

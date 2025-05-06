@@ -15,7 +15,7 @@ const passwordVerification = (password)=>{
     let strength = 0;
     const hasUppercase = /[A-Z]/.test(password);
     const hasLowercase = /[a-z]/.test(password);
-    const hasSpecialChar = /[~`!#$%\^&*+=\-\[\]\\';,/{}|\\":<>\?]/.test(password);
+    const hasSpecialChar = /[~`!#$%\^&*+=\-\[\]\\';,/{}|\\":<>\?@]/.test(password);
     const hasNumeric = /\d/.test(password)
 
     if(hasUppercase) strength++;
@@ -60,6 +60,7 @@ const employeeFormHandler = (e) => {
             empForm[empIndex].getElementsByTagName("input")[0].classList.add("border-danger")
             empForm[empIndex].getElementsByTagName("input")[0].classList.add("border-3")
         }else if((elem.getAttribute("name") === "password" || elem.getAttribute("name") === "cnfPassword") && passwordVerification(elem.value)!==4){
+            console.log(passwordVerification(elem.value));
             empForm[empIndex].getElementsByTagName("input")[0].classList.add("border-danger")
             empForm[empIndex].getElementsByTagName("input")[0].classList.add("border-3")
         }
