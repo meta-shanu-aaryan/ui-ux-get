@@ -24,7 +24,7 @@ const FormSchema = z.object({
 })
 
 export function Addnote() {
-    const form = useForm < z.infer < typeof FormSchema >> ({
+    const form = useForm({
         resolver: zodResolver(FormSchema),
         defaultValues: {
             username: "",
@@ -61,7 +61,7 @@ export function Addnote() {
                         </FormItem>
                     )}
                 />
-                
+
                 <Button type="submit">Submit</Button>
             </form>
         </Form>
