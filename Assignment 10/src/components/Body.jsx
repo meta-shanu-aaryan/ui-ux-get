@@ -20,7 +20,7 @@ import {
     CardTitle,
 } from "@/components/ui/card"
 import { Button } from './ui/button';
-import { Eye, PenSquare, Trash } from 'lucide-react';
+import { Check, CheckCheck, Eye, PenSquare, Trash } from 'lucide-react';
 import {
     Dialog,
     DialogContent,
@@ -38,7 +38,7 @@ import { Label } from './ui/label';
 
 const Body = () => {
     const context = useContext(taskContext);
-    const { tasks, editTask, deleteTask } = context; // Get tasks directly from context
+    const { tasks, editTask, deleteTask, progressTask, completedTask } = context; // Get tasks directly from context
 
     const [editTaskModal, setEditTaskModal] = useState(false);
     const [deleteTaskModal, setDeleteTaskModal] = useState(false);
@@ -57,13 +57,13 @@ const Body = () => {
     }
 
     return (
-        <div className='h-[100vh] bg-[#c2c2d9] p-12 flex gap-12'>
+        <div className='h-[91vh] bg-[#c2c2d9] p-12 flex gap-12'>
             <div className='w-1/3 bg-[#fcf5ff] rounded-sm overflow-auto transition-all'>
                 <div className='px-4 text-center bg-red-400'>
                     <p className='text-3xl text-gray-800 pt-4 pb-7 mb-4 text-between font-semibold'>New Tasks</p>
                 </div>
                 {(
-                    tasks.filter(task => task.status === "new").length === 0 ? (<div>Nothing available</div>) : tasks.filter(task => task.status === "new").sort((task1, task2) => {
+                    tasks.filter(task => task.status === "new").length === 0 ? (<div className='text-center text-xl font-semibold text-gray-600'>Nothing available</div>) : tasks.filter(task => task.status === "new").sort((task1, task2) => {
                         if (task1.priority == "high" && task2.priority == "medium") {
                             return -1;
                         } else if (task1.priority == "high" && task2.priority == "low") {
@@ -93,9 +93,10 @@ const Body = () => {
                                                     </DialogTrigger>
                                                     <DialogContent className="sm:max-w-[425px]">
                                                         <DialogHeader>
-                                                            <div className='flex items-center gap-6'>
+                                                            <div className='flex justify-between mt-5 items-center gap-6'>
                                                                 <DialogTitle>Task Details</DialogTitle>
                                                                 <div className='flex gap-3'>
+                                                                    <Button variant={"outline"} onClick={() => { progressTask(task.id) }}><Check /></Button>
                                                                     <Dialog>
                                                                         <DialogTrigger asChild>
                                                                             <Button variant="outline"><PenSquare /></Button>
@@ -169,7 +170,7 @@ const Body = () => {
 
                                                                             </div>
                                                                             <DialogFooter>
-                                                                                <Button onClick={() => { deleteTask(task.id) }} variant={"destructive"}>Save changes</Button>
+                                                                                <Button onClick={() => { deleteTask(task.id) }} variant={"destructive"}>Delete</Button>
                                                                             </DialogFooter>
                                                                         </DialogContent>
                                                                     </Dialog>
@@ -208,7 +209,7 @@ const Body = () => {
                     <p className='text-3xl text-gray-800 pt-4 pb-7 mb-4 text-between font-semibold'>In Progress</p>
                 </div>
                 {(
-                    tasks.filter(task => task.status === "in progress").length === 0 ? (<div>Nothing available</div>) : tasks.filter(task => task.status === "in progress").sort((task1, task2) => {
+                    tasks.filter(task => task.status === "in progress").length === 0 ? (<div className='text-center text-xl font-semibold text-gray-600'>Nothing available</div>) : tasks.filter(task => task.status === "in progress").sort((task1, task2) => {
                         if (task1.priority == "high" && task2.priority == "medium") {
                             return -1;
                         } else if (task1.priority == "high" && task2.priority == "low") {
@@ -238,9 +239,10 @@ const Body = () => {
                                                     </DialogTrigger>
                                                     <DialogContent className="sm:max-w-[425px]">
                                                         <DialogHeader>
-                                                            <div className='flex items-center gap-6'>
+                                                            <div className='flex items-center gap-6 justify-between mt-5'>
                                                                 <DialogTitle>Task Details</DialogTitle>
-                                                                <div className='flex gap-3'>
+                                                                <div className='flex'>
+                                                                    <Button variant={"outline"} onClick={() => { completedTask(task.id) }}><CheckCheck /></Button>
                                                                     <Dialog>
                                                                         <DialogTrigger asChild>
                                                                             <Button variant="outline"><PenSquare /></Button>
@@ -312,7 +314,7 @@ const Body = () => {
 
                                                                             </div>
                                                                             <DialogFooter>
-                                                                                <Button onClick={() => { deleteTask(task.id) }} variant={"destructive"}>Save changes</Button>
+                                                                                <Button onClick={() => { deleteTask(task.id) }} variant={"destructive"}>Delete</Button>
                                                                             </DialogFooter>
                                                                         </DialogContent>
                                                                     </Dialog>
@@ -351,7 +353,7 @@ const Body = () => {
                     <p className='text-3xl text-gray-800 pt-4 pb-7 mb-4 font-semibold text-between'>Completed</p>
                 </div>
                 {(
-                    tasks.filter(task => task.status === "completed").length === 0 ? (<div>Nothing available</div>) : tasks.filter(task => task.status === "completed").sort((task1, task2) => {
+                    tasks.filter(task => task.status === "completed").length === 0 ? (<div className='text-center text-xl font-semibold text-gray-600'>Nothing available</div>) : tasks.filter(task => task.status === "completed").sort((task1, task2) => {
                         if (task1.priority == "high" && task2.priority == "medium") {
                             return -1;
                         } else if (task1.priority == "high" && task2.priority == "low") {
@@ -381,7 +383,7 @@ const Body = () => {
                                                     </DialogTrigger>
                                                     <DialogContent className="sm:max-w-[425px]">
                                                         <DialogHeader>
-                                                            <div className='flex items-center gap-6'>
+                                                            <div className='flex justify-between mt-5 items-center gap-6'>
                                                                 <DialogTitle>Task Details</DialogTitle>
                                                                 <div className='flex gap-3'>
                                                                     <Dialog>
@@ -399,7 +401,7 @@ const Body = () => {
 
                                                                             </div>
                                                                             <DialogFooter>
-                                                                                <Button onClick={() => { deleteTask(task.id) }} variant={"destructive"}>Save changes</Button>
+                                                                                <Button onClick={() => { deleteTask(task.id) }} variant={"destructive"}>Delete</Button>
                                                                             </DialogFooter>
                                                                         </DialogContent>
                                                                     </Dialog>

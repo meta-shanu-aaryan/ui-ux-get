@@ -54,9 +54,36 @@ const TaskState = (props) => {
     setTasks(newTasks);
   };
 
+  const progressTask = (id) => {
+
+    const newTasks = tasks.map(task =>
+      task.id === id
+        ? {
+          ...task,
+          status: "in progress",
+        }
+        : task
+    );
+    setTasks(newTasks);
+  };
+
+  const completedTask = (id) => {
+
+    const newTasks = tasks.map(task =>
+      task.id === id
+        ? {
+          ...task,
+          status: "completed",
+          completionDate: new Date().toLocaleDateString(),
+        }
+        : task
+    );
+    setTasks(newTasks);
+  };
+
 
   return (
-    <taskContext.Provider value={{ tasks, addTask, deleteTask, editTask, setTasks }}>
+    <taskContext.Provider value={{ tasks, addTask, deleteTask, editTask, setTasks, progressTask, completedTask }}>
       {props.children}
     </taskContext.Provider>
   );
