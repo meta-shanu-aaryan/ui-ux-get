@@ -17,21 +17,54 @@ import {
 } from "@/components/ui/form"
 import { Input } from "@/components/ui/input"
 
+import {
+    Select,
+    SelectContent,
+    SelectItem,
+    SelectTrigger,
+    SelectValue,
+} from "@/components/ui/select"
+import { useContext } from "react"
+import taskContext from "@/context/taskContext"
+
+
+
+
 const FormSchema = z.object({
-    username: z.string().min(2, {
+    title: z.string().min(2, {
         message: "Username must be at least 2 characters.",
+    }),
+    description: z.string().min(2, {
+        message: "Username must be at least 2 characters.",
+    }),
+    priority: z.enum(["high", "low", "medium"], {
+        required_error: "Selected value is not available"
     }),
 })
 
-export function Addnote() {
+export function Addnote({ close }) {
+
+    const context = useContext(taskContext);
+    const { addTask } = context;
+
     const form = useForm({
         resolver: zodResolver(FormSchema),
         defaultValues: {
-            username: "",
+            title: "",
+            description: "",
+            priority: ""
         },
     })
 
     function onSubmit(data) {
+        console.log(data);
+
+        console.log(JSON.stringify(data, null, 2));
+
+        const dataObj = JSON.stringify(data, null, 2);
+
+        addTask(data.title, data.description, data.priority);
+
         toast({
             title: "You submitted the following values:",
             description: (
@@ -40,23 +73,67 @@ export function Addnote() {
                 </pre>
             ),
         })
+        close();
     }
 
     return (
         <Form {...form}>
-            <form onSubmit={form.handleSubmit(onSubmit)} className="w-2/3 space-y-6">
+            <form onSubmit={form.handleSubmit(onSubmit)} className="w-full space-y-6">
                 <FormField
                     control={form.control}
-                    name="username"
+                    name="title"
                     render={({ field }) => (
                         <FormItem>
-                            <FormLabel>Username</FormLabel>
+                            <FormLabel>Title</FormLabel>
                             <FormControl>
-                                <Input placeholder="shadcn" {...field} />
+                                <Input placeholder="Title" {...field} />
                             </FormControl>
                             <FormDescription>
-                                This is your public display name.
+                                Title of the task.
                             </FormDescription>
+                            <FormMessage />
+                        </FormItem>
+                    )}
+                />
+                <FormField
+                    control={form.control}
+                    name="description"
+                    render={({ field }) => (
+                        <FormItem>
+                            <FormLabel>Description</FormLabel>
+                            <FormControl>
+                                <Input placeholder="Description" {...field} />
+                            </FormControl>
+                            <FormDescription>
+                                Description of the task.
+                            </FormDescription>
+                            <FormMessage />
+                        </FormItem>
+                    )}
+                />
+
+                <FormField
+                    control={form.control}
+                    name="priority"
+                    render={({ field }) => (
+                        <FormItem>
+                            <FormLabel>Priority</FormLabel>
+                            <FormControl>
+                                <Select onValueChange={field.onChange} defaultValue={field.value}>
+                                    <SelectTrigger className="w-[180px]">
+                                        <SelectValue placeholder="Select Priority" />
+                                    </SelectTrigger>
+                                    <SelectContent>
+                                        <SelectItem value="high">High</SelectItem>
+                                        <SelectItem value="medium">Medium</SelectItem>
+                                        <SelectItem value="low">Low</SelectItem>
+                                    </SelectContent>
+                                </Select>
+
+                            </FormControl>
+                            {/* <FormDescription>
+                                Title of the task.
+                            </FormDescription> */}
                             <FormMessage />
                         </FormItem>
                     )}

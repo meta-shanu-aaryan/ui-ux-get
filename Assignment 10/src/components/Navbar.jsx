@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { Button } from "./ui/button"
 import {
     Dialog,
@@ -12,19 +12,24 @@ import { SquarePlus } from 'lucide-react'
 import { Addnote } from './Addnote'
 
 const Navbar = () => {
+    // const { task, setTask } = useContext(taskContext);
+    const [modalOpen, setModalOpen] = useState(false);
+    const closeModal = () => {
+        setModalOpen(false)
+    }
     return (
         <>
-            <nav className='bg-gray-900 flex w-full h-[70px] justify-between items-center px-24'>
-                <div className='font-semibold text-3xl text-gray-200'>ToDo App</div>
+            <nav className='bg-gray-300 flex w-full h-[70px] justify-between items-center px-24 drop-shadow-sm drop-shadow-gray-600'>
+                <div className='font-semibold text-3xl text-gray-800'>Task Manager</div>
                 <div>
-                    <Dialog>
-                        <Button variant={"outline"}><SquarePlus /><DialogTrigger>Add New Task</DialogTrigger></Button>
+                    <Dialog open={modalOpen} onOpenChange={setModalOpen}>
+                        <Button><SquarePlus /><DialogTrigger >Add New Task</DialogTrigger></Button>
                         <DialogContent>
                             <DialogHeader>
-                                <DialogTitle>Add Note Details</DialogTitle>
-                                <DialogDescription>
-                                    <Addnote />
-                                </DialogDescription>
+                                <DialogTitle>Add Task Details</DialogTitle>
+                                {/* <DialogDescription> */}
+                                <Addnote close={closeModal} />
+                                {/* </DialogDescription> */}
                             </DialogHeader>
                         </DialogContent>
                     </Dialog></div>

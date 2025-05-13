@@ -1,5 +1,3 @@
-let numb:number = 10;
-
 enum gender{
     male,
     female
@@ -79,7 +77,6 @@ let empObj = {
 
 const empFormHandler = (e)=>{
     e.preventDefault();
-    console.log();
     
     if(empIndex+1 == empForm.length){
         empEnt.forEach(inp => {
