@@ -81,7 +81,7 @@ const Body = () => {
                         }
                     }).map((task, index) => (
                         <div key={index} className={`px-5 my-3 transition-all`}>
-                            <div className={`rounded-lg my-3 ${task.priority === "high" ? "bg-red-500" : task.priority === "medium" ? "bg-yellow-500" : "bg-green-500"}`}>
+                            <div className={`rounded-2xl overflow-hidden my-3 ${task.priority === "high" ? "bg-red-500" : task.priority === "medium" ? "bg-yellow-500" : "bg-green-500"}`}>
                                 <Card>
                                     <CardHeader>
                                         <CardTitle>
@@ -178,7 +178,7 @@ const Body = () => {
                                                             </div>
 
                                                         </DialogHeader>
-                                                        <div className="grid gap-4 py-4">
+                                                        <div className="grid gap-4 py-4 rounded">
                                                             <p className='text-xl'>Title : {task.title}</p>
                                                             <p>Description : {task.description}</p>
                                                             <Badge>Priority : {task.priority}</Badge>

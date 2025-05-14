@@ -16,7 +16,7 @@ const TaskState = (props) => {
     }
   ]);
 
-  const addTask = async (title, description, priority) => {
+  const addTask = (title, description, priority) => {
     const task = {
       id: Date.now(),
       title,
@@ -85,7 +85,7 @@ const TaskState = (props) => {
   return (
     <taskContext.Provider value={{ tasks, addTask, deleteTask, editTask, setTasks, progressTask, completedTask }}>
       {props.children}
-    </taskContext.Provider>
+    </taskContext.Provider> 
   );
 };
 
